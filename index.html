@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Maroua Cheraitia — Portfolio Cybersécurité</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0B0F14; --card:#12181F; --border:#232B35; --border-strong:#3A4552;
+  --text:#E7E4DE; --text-2:#9AA5B1; --text-3:#5D6874;
+  --amber:#D9A441; --amber-dim:#6E5426; --teal:#4FA98C; --teal-dim:#2B4A40;
+  --mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --sans: 'IBM Plex Sans', -apple-system, sans-serif;
+  box-sizing:border-box;
+  padding-top: env(safe-area-inset-top,0px);
+  padding-bottom: env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:inherit}
+html{scroll-padding-top: env(safe-area-inset-top,0px); background:var(--bg);}
+body{
+  margin:0; background:var(--bg); color:var(--text); font-family:var(--sans);
+  line-height:1.65; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:760px; margin:0 auto; padding:3rem 1.25rem 5rem;}
+a{color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);}
+a:hover{border-bottom-color:var(--amber);}
+
+.prompt{
+  font-family:var(--mono); font-size:13px; color:var(--teal);
+  display:flex; align-items:center; gap:8px; margin:2.5rem 0 0.9rem;
+}
+.prompt::before{content:"›"; color:var(--text-3);}
+.prompt .cursor{display:inline-block; width:7px; height:14px; background:var(--teal); animation:blink 1s steps(1) infinite;}
+@keyframes blink{50%{opacity:0}}
+
+header.hero{padding-top:0.5rem;}
+.hero h1{
+  font-size:clamp(28px,6vw,40px); font-weight:600; margin:0.4rem 0 0.3rem; letter-spacing:-0.01em;
+}
+.hero .role{color:var(--text-2); font-size:16px; margin:0 0 1rem;}
+.hero .tagline{font-size:16px; max-width:56ch; color:var(--text); margin:0 0 1.4rem;}
+.meta-row{font-family:var(--mono); font-size:13px; color:var(--text-2); display:flex; flex-wrap:wrap; gap:0.4rem 1.2rem;}
+.meta-row span{white-space:nowrap;}
+.dot{color:var(--teal);}
+
+.card{
+  background:var(--card); border:0.5px solid var(--border); border-radius:10px;
+  padding:1.1rem 1.25rem; margin-bottom:0.9rem;
+}
+.card h3{margin:0 0 0.2rem; font-size:16px; font-weight:600;}
+.card .sub{font-family:var(--mono); font-size:12px; color:var(--text-3); margin-bottom:0.6rem;}
+.card ul{margin:0; padding-left:1.1rem; color:var(--text-2); font-size:14.5px;}
+.card li{margin-bottom:0.25rem;}
+.tag{
+  display:inline-block; font-family:var(--mono); font-size:11px; color:var(--amber);
+  border:1px solid var(--amber-dim); border-radius:5px; padding:2px 8px; margin-top:0.6rem;
+}
+
+.exp-item{border-left:2px solid var(--border-strong); padding-left:1rem; margin-bottom:1.1rem; position:relative;}
+.exp-item::before{content:""; position:absolute; left:-5px; top:5px; width:8px; height:8px; border-radius:50%; background:var(--teal);}
+.exp-item h3{margin:0 0 0.15rem; font-size:15px; font-weight:600;}
+.exp-item .sub{font-family:var(--mono); font-size:12px; color:var(--text-3); margin-bottom:0.4rem;}
+.exp-item ul{margin:0; padding-left:1.1rem; color:var(--text-2); font-size:14px;}
+
+.skills-grid{display:grid; grid-template-columns:1fr; gap:0.8rem;}
+@media(min-width:640px){.skills-grid{grid-template-columns:1fr 1fr;}}
+.skill-group h4{font-family:var(--mono); font-size:12px; color:var(--teal); margin:0 0 0.5rem; font-weight:500;}
+.skill-group .pills{display:flex; flex-wrap:wrap; gap:6px;}
+.pill{
+  font-size:13px; background:var(--bg); border:0.5px solid var(--border); border-radius:6px;
+  padding:4px 10px; color:var(--text-2);
+}
+
+.about p{font-size:15px; color:var(--text-2); max-width:60ch;}
+.contact-row{display:flex; flex-direction:column; gap:0.55rem; font-family:var(--mono); font-size:14px;}
+
+footer{margin-top:3rem; padding-top:1.2rem; border-top:0.5px solid var(--border); color:var(--text-3); font-family:var(--mono); font-size:12px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="prompt">maroua@soc:~$ whoami<span class="cursor"></span></div>
+    <h1>Cheraitia Maroua</h1>
+    <p class="role">Future ingénieure — Administration Systèmes, Réseaux &amp; Cybersécurité</p>
+    <p class="tagline">Du helpdesk au SOC : j'ai commencé par réparer les pannes, aujourd'hui je traque les intrusions. Entre VLAN, logs Wazuh et incidents à classer, je construis pas à pas le profil d'une analyste sécurité prête à l'emploi.</p>
+    <div class="meta-row">
+      <span>Alger, Algérie</span><span class="dot">·</span>
+      <span>Ouverte au stage / alternance et poste SOC</span><span class="dot">·</span>
+      <span>Bac+3 — obtention janvier 2027</span>
+    </div>
+  </header>
+
+  <div class="prompt">$ cat about.md<span class="cursor"></span></div>
+  <div class="about">
+    <p>Technicienne Supérieure en Systèmes Informatiques diplômée, actuellement en formation d'ingénieure (RNCP Niveau 6, Bac+3) en Administration Systèmes, Réseaux et Cybersécurité. Près de 3 ans d'expérience terrain en maintenance, administration Windows Server et support réseau, aujourd'hui orientée vers la sécurité opérationnelle — supervision SOC, détection d'incidents et durcissement d'infrastructure, dans le cadre d'un mémoire de fin d'études sur la sécurisation réseau via SIEM.</p>
+  </div>
+
+  <div class="prompt">$ ls ~/projects --sort=priority<span class="cursor"></span></div>
+
+  <div class="card">
+    <h3>SIEM / Wazuh SOC Lab</h3>
+    <div class="sub">Projet de mémoire — Blue Team</div>
+    <ul>
+      <li>Déploiement d'un Wazuh Manager avec agents Windows et Linux</li>
+      <li>Collecte et analyse de logs, configuration de détections et alertes</li>
+      <li>File Integrity Monitoring (FIM) et simulations d'attaques</li>
+    </ul>
+    <span class="tag">supervision SOC</span>
+  </div>
+
+  <div class="card">
+    <h3>Incident Response / SOC Dashboard Lab</h3>
+    <div class="sub">Projet de mémoire — Incident Response</div>
+    <ul>
+      <li>Plateforme de suivi des incidents connectée à l'API Wazuh, base SQLite</li>
+      <li>Pipeline alertes → classification → priorité/sévérité → incident</li>
+      <li>Suivi et investigation des incidents</li>
+    </ul>
+    <span class="tag">SOC engineering</span>
+  </div>
+
+  <div class="card">
+    <h3>Enterprise Network Lab</h3>
+    <div class="sub">Conception réseau</div>
+    <ul>
+      <li>Infrastructure réseau d'entreprise : VLAN, routage et switching Cisco</li>
+      <li>Mise en place de firewall et segmentation réseau</li>
+    </ul>
+    <span class="tag">network security</span>
+  </div>
+
+  <div class="card">
+    <h3>System Administration &amp; Hardening Lab</h3>
+    <div class="sub">Durcissement systèmes</div>
+    <ul>
+      <li>Administration Windows Server et Linux : utilisateurs, permissions, services</li>
+      <li>Hardening système et mise en place de sauvegardes</li>
+    </ul>
+    <span class="tag">system security</span>
+  </div>
+
+  <div class="prompt">$ cat experience.log<span class="cursor"></span></div>
+  <div class="card" style="margin-bottom:1.1rem;">
+    <div class="sub" style="margin-bottom:0;">Contrat d'apprentissage — Diplôme de Technicien Supérieur — Octobre 2023 – Avril 2026 (30 mois, continu)</div>
+  </div>
+
+  <div class="exp-item">
+    <h3>Sonatrach, Raffinerie d'Alger</h3>
+    <div class="sub">Octobre 2023 – Mars 2024 (~5 mois)</div>
+    <ul>
+      <li>Help Desk : installation Windows/Office, assemblage PC</li>
+      <li>Remplacement RAM/HDD/SSD, maintenance préventive et corrective</li>
+    </ul>
+  </div>
+
+  <div class="exp-item">
+    <h3>CIC — Centre International de Conférence</h3>
+    <div class="sub">Mars 2024 – Juillet 2024 (~4 mois)</div>
+    <ul>
+      <li>Installation et configuration Windows Server</li>
+      <li>Gestion des utilisateurs, droits d'accès et partage de fichiers</li>
+    </ul>
+  </div>
+
+  <div class="exp-item">
+    <h3>Algérie Poste — Centre National des Chèques Postaux (CNCP)</h3>
+    <div class="sub">Juillet 2024 – Avril 2026 (21 mois)</div>
+    <ul>
+      <li>Maintenance hardware/software, câblage réseau RJ45, diagnostic via CMD</li>
+      <li>Administration Windows Server : utilisateurs et droits d'accès</li>
+      <li>Support antivirus, imprimantes réseau, environnement VMware</li>
+    </ul>
+  </div>
+
+  <div class="prompt">$ grep -r skills ./<span class="cursor"></span></div>
+
+  <div class="skills-grid">
+    <div class="skill-group">
+      <h4>Sécurité / SOC</h4>
+      <div class="pills">
+        <span class="pill">Wazuh / SIEM</span><span class="pill">Détection &amp; alertes</span>
+        <span class="pill">FIM</span><span class="pill">Hardening</span><span class="pill">Firewall</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h4>Réseaux</h4>
+      <div class="pills">
+        <span class="pill">Cisco</span><span class="pill">VLAN</span><span class="pill">Routage / switching</span>
+        <span class="pill">TCP/IP</span><span class="pill">RJ45</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h4>Systèmes</h4>
+      <div class="pills">
+        <span class="pill">Windows Server</span><span class="pill">Linux</span><span class="pill">Droits d'accès</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h4>Support / Outillage</h4>
+      <div class="pills">
+        <span class="pill">VMware</span><span class="pill">Help Desk</span><span class="pill">Diagnostic matériel</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="prompt">$ cat contact.txt<span class="cursor"></span></div>
+  <div class="contact-row">
+    <span>tel: 07 72 29 99 31</span>
+    <span>mail: <a href="mailto:cheraitiamarwa30@gmail.com">cheraitiamarwa30@gmail.com</a></span>
+    <span>localisation: Staoueli, Alger</span>
+  </div>
+
+  <footer>maroua@soc:~$ echo "merci d'être passé."</footer>
+</div>
+</body>
+</html>
